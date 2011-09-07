@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1934" systemVersion="11B26" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+    <dependencies>
+        <development defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="931"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="11">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
+                <navigationController id="3" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="4" customClass="LBShadowedNavigationBar">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.29123777150000002" green="0.13455459480000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="IMQ-04-Oi2" kind="relationship" relationship="rootViewController" id="sXw-h7-maU"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="19" y="71"/>
+        </scene>
+        <scene sceneID="dQW-xy-QkM">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XUO-Sz-Exy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="IMQ-04-Oi2" userLabel="Employees View Controller" customClass="LBEmployeesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KMr-di-YH3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="Qzt-Zs-3hj" userLabel="Employees Table View">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LBEmployeeTableViewCell" id="Vwm-mc-ufm" userLabel="Employee Table View Cell" customClass="LBEmployeeTableViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" id="m1J-cb-l8o" customClass="LBColoredHorizontalTabView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" id="rdD-xn-fD2" userLabel="Thumbnail Photo Image View">
+                                                    <rect key="frame" x="16" y="16" width="48" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Employee Name" lineBreakMode="tailTruncation" minimumFontSize="15" id="mpp-pp-0xv" userLabel="Name Label">
+                                                    <rect key="frame" x="74" y="28" width="226" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="20"/>
+                                                    <color key="textColor" white="0.10000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="coloredHorizontalTabView" destination="m1J-cb-l8o" id="eRf-Hj-zFp"/>
+                                            <outlet property="nameLabel" destination="mpp-pp-0xv" id="zcj-kg-Prq"/>
+                                            <outlet property="thumbnailPhotoImageView" destination="rdD-xn-fD2" id="Pea-wG-1tN"/>
+                                            <segue destination="21" kind="push" identifier="LBEmployeeDetailPushSegue" id="DcU-CI-ajI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="IMQ-04-Oi2" id="gjd-xq-7M9"/>
+                                    <outlet property="delegate" destination="IMQ-04-Oi2" id="fNI-Xd-R2u"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Employees" id="gcP-Sj-xMD" userLabel="Employees Navigation Item"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="employeesTableView" destination="Qzt-Zs-3hj" id="OXp-fJ-btd"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="475" y="71"/>
+        </scene>
+        <scene sceneID="24">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="" title="Detail" id="21" userLabel="Employee Detail View Controller" customClass="LBEmployeeDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="22">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="kZb-lZ-seg" userLabel="Content Scroll VIew">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="Zza-ls-y0j" userLabel="Employee Photo Image View">
+                                        <rect key="frame" x="32" y="32" width="256" height="256"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" id="oqT-tV-pZN" userLabel="Employee Label Container Label">
+                                        <rect key="frame" x="0.0" y="296" width="320" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Job Title: " textAlignment="right" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="10" id="UNF-vf-c2f" userLabel="Job Title Label">
+                                                <rect key="frame" x="27" y="16" width="120" height="28"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="16"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Job Title" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="10" id="XUs-eq-7yt" userLabel="Employee Job Title Label">
+                                                <rect key="frame" x="160" y="17" width="128" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Years Employed:" textAlignment="right" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="10" id="cd3-Y6-YW6" userLabel="Years Employed Label">
+                                                <rect key="frame" x="32" y="60" width="115" height="28"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="16"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="10" id="dUf-AN-nCF" userLabel="Employee Years Employed Label">
+                                                <rect key="frame" x="160" y="61" width="128" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xXz-q5-QQv" userLabel="Employee Detail Navigation Item"/>
+                    <connections>
+                        <outlet property="contentScrollView" destination="kZb-lZ-seg" id="y0n-z1-dmL"/>
+                        <outlet property="employeeJobTitleLabel" destination="XUs-eq-7yt" id="obT-no-ccF"/>
+                        <outlet property="employeeLabelContainerView" destination="oqT-tV-pZN" id="uB1-xe-F0J"/>
+                        <outlet property="employeePhotoImageView" destination="Zza-ls-y0j" id="83w-8g-fZf"/>
+                        <outlet property="employeeYearsEmployedLabel" destination="dUf-AN-nCF" id="EWY-le-TYV"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="924" y="71"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="LBColoredHorizontalTabView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LBColoredHorizontalTabView.h"/>
+        </class>
+        <class className="LBEmployeeDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LBEmployeeDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="coloredHorizontalTabView" candidateClass="LBColoredHorizontalTabView"/>
+                <relationship kind="outlet" name="contentScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="employeeJobTitleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="employeeLabelContainerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="employeePhotoImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="employeeYearsEmployedLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="LBEmployeeTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LBEmployeeTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="coloredHorizontalTabView" candidateClass="LBColoredHorizontalTabView"/>
+                <relationship kind="outlet" name="jobTitleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="thumbnailPhotoImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="LBEmployeesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LBEmployeesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="employeesTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="LBShadowedNavigationBar" superclassName="UINavigationBar">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LBShadowedNavigationBar.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
